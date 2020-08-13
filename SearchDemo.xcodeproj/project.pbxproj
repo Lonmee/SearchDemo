@@ -16,7 +16,7 @@
 		B077AFC624E5590D0083E2D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B077AFC424E5590D0083E2D4 /* LaunchScreen.storyboard */; };
 		B077AFD124E5590D0083E2D4 /* SearchDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFD024E5590D0083E2D4 /* SearchDemoTests.swift */; };
 		B077AFDC24E5590D0083E2D4 /* SearchDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFDB24E5590D0083E2D4 /* SearchDemoUITests.swift */; };
-		B077AFEB24E5695F0083E2D4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFEA24E5695F0083E2D4 /* Test.swift */; };
+		B077AFEB24E5695F0083E2D4 /* InputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFEA24E5695F0083E2D4 /* InputBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		B077AFD724E5590D0083E2D4 /* SearchDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B077AFDB24E5590D0083E2D4 /* SearchDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDemoUITests.swift; sourceTree = "<group>"; };
 		B077AFDD24E5590D0083E2D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B077AFEA24E5695F0083E2D4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		B077AFEA24E5695F0083E2D4 /* InputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 				B077AFB624E5590C0083E2D4 /* AppDelegate.swift */,
 				B077AFB824E5590C0083E2D4 /* SceneDelegate.swift */,
 				B077AFBD24E5590C0083E2D4 /* ContentView.swift */,
-				B077AFEA24E5695F0083E2D4 /* Test.swift */,
+				B077AFEA24E5695F0083E2D4 /* InputBar.swift */,
 				B077AFBF24E5590D0083E2D4 /* Assets.xcassets */,
 				B077AFC424E5590D0083E2D4 /* LaunchScreen.storyboard */,
 				B077AFC724E5590D0083E2D4 /* Info.plist */,
@@ -275,7 +275,7 @@
 			files = (
 				B077AFBC24E5590C0083E2D4 /* SearchDemo.xcdatamodeld in Sources */,
 				B077AFB724E5590C0083E2D4 /* AppDelegate.swift in Sources */,
-				B077AFEB24E5695F0083E2D4 /* Test.swift in Sources */,
+				B077AFEB24E5695F0083E2D4 /* InputBar.swift in Sources */,
 				B077AFBE24E5590C0083E2D4 /* ContentView.swift in Sources */,
 				B077AFB924E5590C0083E2D4 /* SceneDelegate.swift in Sources */,
 			);
