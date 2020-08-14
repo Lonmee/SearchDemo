@@ -27,30 +27,33 @@ struct ContentView: View {
                 Form {
                     ForEach(categories.keys.sorted(by: >), id: \.self) { key in
                         Section (header: Text(key)
-                        .foregroundColor(.gray)
-                        .font(.subheadline)) {
-                            ForEach(self.categories[key]!, id: \.self) {goods in
-                                HStack {
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        Text(goods.mode)
-                                        .font(.headline)
-                                        Text(goods.stock ? "in-stock" : "Out-of-stock")
-                                            .foregroundColor(.gray)
-                                            .font(.caption)
-                                    }
-                                    Spacer()
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 10, style: .circular)
-                                        .fill(Color.gray)
-                                        .opacity(0.2)
-                                            .frame(width:70, height: 24)
+                            .foregroundColor(.gray)
+                            .font(.subheadline)) {
+                                ForEach(self.categories[key]!, id: \.self) {goods in
+                                    HStack {
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text(goods.mode)
+                                                .font(.headline)
+                                            Text(goods.stock ? "in-stock" : "Out-of-stock")
+                                                .foregroundColor(.gray)
+                                                .font(.caption)
+                                        }
+                                        Spacer()
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 10, style: .circular)
+                                                .fill(goods.stock ? Color.blue : Color.gray)
+                                                .opacity(0.1)
+                                                .frame(width:70, height: 24)
+                                            Text("$\(String(goods.price))")
+                                                .foregroundColor(goods.stock ? .blue : .gray)
+                                                .font(.caption)
+                                        }
                                     }
                                 }
-                            }
                         }
                     }
                 }
-//                Text(file)
+                //                Text(file)
                 Spacer()
             }
             .navigationBarTitle(Text("Search"))
