@@ -23,17 +23,18 @@ struct GoodsForm: View {
         Form {
             ForEach(categories.keys.sorted(by: >), id: \.self) { key in
                 Section (header: Text(key)
-                    .font(.subheadline),
-                         footer: EmptyView()) {
+                    .font(.subheadline)
+                    .fontWeight(.medium)) {
                             ForEach(self.categories[key]!, id: \.self) {goods in
                                 HStack {
-                                    VStack(alignment: .leading, spacing: 2) {
+                                    VStack(alignment: .leading, spacing: 4) {
                                         Text(goods.mode)
                                             .font(.headline)
                                         Text(goods.stock ? "in-stock" : "Out-of-stock")
                                             .foregroundColor(.gray)
                                             .font(.caption)
                                     }
+                                    .frame(height: 44, alignment: .center)
                                     Spacer()
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 10, style: .circular)
