@@ -33,6 +33,7 @@ let goodsData: [Goods] = [
     Goods(id: 2, brand: "Dyson", category: .hairDryer, mode: "Supersonic", stock: true, price: 399.99)
 ]
 
+let goodsDataEmpty: [Goods] = []
 
 /// mock data deserializing
 /// - Returns: data for server side

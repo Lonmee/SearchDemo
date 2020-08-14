@@ -13,13 +13,24 @@ struct ContentView: View {
     @State var keyword: String = ""
     let file = deserialize()
     
+    let bg: some View = Rectangle()
+        .fill(Color(red: 0.5, green: 0.5, blue: 0.5))
+    
+    
     var body: some View {
         NavigationView {
-            VStack {
+            VStack (alignment: .center, spacing: 10) {
                 InputBar(editing: $editing, keyword: $keyword)
-                GoodsForm()
+                
+                if (goodsData.isEmpty) {
+                    Text("No result")
+                        .foregroundColor(.gray)
+                        .font(.subheadline)
+                        .padding(.top, 60)
+                } else {
+                    GoodsForm()
+                }
                 //Text(file)
-                Spacer()
             }
             .navigationBarTitle(Text("Search"))
             .navigationBarHidden(editing)

@@ -14,10 +14,6 @@ struct InputBar: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10, style: .circular)
-                .fill(Color.gray)
-                .opacity(0.2)
-                .frame(height: 38)
             HStack {
                 if (keyword.isEmpty) {
                     Image(systemName: "magnifyingglass")

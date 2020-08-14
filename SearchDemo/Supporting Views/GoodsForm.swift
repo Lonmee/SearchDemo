@@ -11,19 +11,19 @@ import SwiftUI
 struct GoodsForm: View {
     
     var categories: [String: [Goods]] {
-        Dictionary(
-            grouping: goodsData,
-            by: { $0.category.rawValue }
+        goodsData.isEmpty ? [:] :
+            Dictionary(
+                grouping: goodsData,
+                by: { $0.category.rawValue }
         )
     }
     
-    // TODO: Section with header will increase height
+    // FIXME: Section with header will increase height
     var body: some View {
         Form {
             ForEach(categories.keys.sorted(by: >), id: \.self) { key in
                 Section (header: Text(key)
-                    .font(.subheadline)
-                    .fontWeight(.medium),
+                    .font(.subheadline),
                          footer: EmptyView()) {
                             ForEach(self.categories[key]!, id: \.self) {goods in
                                 HStack {
