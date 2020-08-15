@@ -14,15 +14,11 @@ struct InputBar: View {
     
     @Binding var editing: Bool
     @Binding var keyword: String
-    @Binding var noResult: Bool
     
     fileprivate func reqSearch() {
         let kw = spaceTrimmer(str: self.keyword)
         if !kw.isEmpty {
             HTTP.GET("http://localhost:8080/search?kw=" + kw) { response in
-                if response.data.isEmpty {
-                    self.noResult = true
-                }
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     self.goodsData.data = response.data.isEmpty ? [] : serialize(response.data)
                 }
@@ -64,7 +60,6 @@ struct InputBar: View {
                         .imageScale(.medium)
                         .onTapGesture {
                             self.keyword = ""
-                            self.noResult = false
                             self.goodsData.data = []
                     }
                 }
