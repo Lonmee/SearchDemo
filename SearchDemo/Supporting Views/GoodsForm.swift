@@ -9,11 +9,12 @@
 import SwiftUI
 
 struct GoodsForm: View {
+    @EnvironmentObject var goodsData: GoodsData
     
     var categories: [String: [Goods]] {
-        goodsData.isEmpty ? [:] :
+        goodsData.data.isEmpty ? [:] :
             Dictionary(
-                grouping: goodsData,
+                grouping: goodsData.data,
                 by: { $0.category.rawValue }
         )
     }

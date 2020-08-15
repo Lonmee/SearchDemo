@@ -29,9 +29,9 @@ fileprivate func addSearchService() -> Void {
                          path: "/search",
                          request: GCDWebServerRequest.self,
                          asyncProcessBlock: {(request, completionBlock) in
-                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
+                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
                                 let kw = request.query?["kw"]
-                                let data = kw == "Dyson" ? deserialize() : ""
+                                let data = kw == "Dyson" ? deserialize(mockGoodsData) : ""
                                 let response = GCDWebServerDataResponse(text: data)
                                 completionBlock(response)
                             }

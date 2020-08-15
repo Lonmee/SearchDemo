@@ -7,8 +7,11 @@
 //
 
 import SwiftUI
+import SwiftHTTP
 
 struct InputBar: View {
+    @EnvironmentObject var goodsData: GoodsData
+    
     @Binding var editing: Bool
     @Binding var keyword: String
     
@@ -31,8 +34,13 @@ struct InputBar: View {
                         self.editing = editing
                     }
                 }) {
-                    print("committed: \(self.keyword)")
-                    searchReq(kw: self.keyword)
+                    HTTP.GET("http://localhost:8080/search?kw=" + self.keyword) { response in
+                        if !response.data.isEmpty {
+                            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                                self.goodsData.data = serialize(response.data)
+                            }
+                        }
+                    }
                 }
                 
                 if (!keyword.isEmpty) {
@@ -41,6 +49,7 @@ struct InputBar: View {
                         .imageScale(.medium)
                         .onTapGesture {
                             self.keyword = ""
+                            self.goodsData.data = []
                     }
                 }
             }
