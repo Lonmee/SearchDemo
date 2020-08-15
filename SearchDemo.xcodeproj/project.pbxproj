@@ -21,7 +21,6 @@
 		B077AFFB24E5AC890083E2D4 /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFFA24E5AC890083E2D4 /* Goods.swift */; };
 		B077B00024E638EE0083E2D4 /* GoodsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFFF24E638EE0083E2D4 /* GoodsForm.swift */; };
 		B09111A724E7CF8F004A62AF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09111A624E7CF8F004A62AF /* Utils.swift */; };
-		B09111AB24E7D3A1004A62AF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B09111AA24E7D3A1004A62AF /* Podfile */; };
 		B09111C324E7E55D004A62AF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09111C224E7E55D004A62AF /* Data.swift */; };
 		B09111CB24E7EA3D004A62AF /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09111CA24E7EA3D004A62AF /* MockData.swift */; };
 		B0FB673124E7A8F50074D404 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB673024E7A8F50074D404 /* Server.swift */; };
@@ -105,7 +104,6 @@
 		B077AFFA24E5AC890083E2D4 /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
 		B077AFFF24E638EE0083E2D4 /* GoodsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsForm.swift; sourceTree = "<group>"; };
 		B09111A624E7CF8F004A62AF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		B09111AA24E7D3A1004A62AF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		B09111AE24E7DE6A004A62AF /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../../../SwiftHTTP-master/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
 		B09111B724E7DEAE004A62AF /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../../SwiftHTTP-master/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
 		B09111C224E7E55D004A62AF /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 		B077AFAA24E5590C0083E2D4 = {
 			isa = PBXGroup;
 			children = (
-				B09111AA24E7D3A1004A62AF /* Podfile */,
 				B077AFB524E5590C0083E2D4 /* SearchDemo */,
 				B077AFCF24E5590D0083E2D4 /* SearchDemoTests */,
 				B077AFDA24E5590D0083E2D4 /* SearchDemoUITests */,
@@ -498,7 +495,6 @@
 			files = (
 				B077AFC624E5590D0083E2D4 /* LaunchScreen.storyboard in Resources */,
 				B077AFC324E5590D0083E2D4 /* Preview Assets.xcassets in Resources */,
-				B09111AB24E7D3A1004A62AF /* Podfile in Resources */,
 				B077AFC024E5590D0083E2D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
