@@ -7,24 +7,12 @@
 //
 
 import SwiftUI
-import SwiftHTTP
 
 struct InputBar: View {
     @EnvironmentObject var goodsData: GoodsData
     
     @Binding var editing: Bool
     @Binding var keyword: String
-    
-    fileprivate func reqSearch() {
-        let kw = spaceTrimmer(str: self.keyword)
-        if !kw.isEmpty {
-            HTTP.GET("http://localhost:8080/search?kw=" + kw) { response in
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    self.goodsData.data = response.data.isEmpty ? [] : serialize(response.data)
-                }
-            }
-        }
-    }
     
     var body: some View {
         ZStack {
@@ -44,14 +32,14 @@ struct InputBar: View {
                 get: { self.keyword },
                 set: {
                     self.keyword = $0
-                    self.reqSearch()
+                    reqSearch(keyword: self.keyword, goodsData: self.goodsData)
                 }),
                 onEditingChanged: { editing in
                     withAnimation(.easeInOut(duration: 0.4)) {
                         self.editing = editing
                     }
                 }) {
-                    self.reqSearch()
+                    reqSearch(keyword: self.keyword, goodsData: self.goodsData)
                 }
                 
                 if (!keyword.isEmpty) {

@@ -40,6 +40,9 @@ struct ContentView: View {
             }
         }
         .padding(.top, editing ? -180 : 0)
+        .onTapGesture {
+            // TODO: keyboard dismiss
+        }
     }
 }
 
