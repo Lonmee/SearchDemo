@@ -30,11 +30,15 @@ struct ContentView: View {
                 } else {
                     GoodsForm()
                 }
-                //Text(file)
             }
             .navigationBarTitle(Text("Search"))
             .navigationBarHidden(editing)
             .padding(.top, editing ? 14 : 0)
+        }
+        .onAppear() {
+            if (startServer()) {
+                print("Search_server comes online")
+            }
         }
     }
 }

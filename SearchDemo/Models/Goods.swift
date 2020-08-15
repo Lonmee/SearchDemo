@@ -35,7 +35,7 @@ let goodsData: [Goods] = [
 
 let goodsDataEmpty: [Goods] = []
 
-/// mock data deserializing
+/// mock data deserializing for server
 /// - Returns: data for server side
 func deserialize() -> String {
     do {
