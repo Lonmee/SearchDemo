@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0429C5924E80F900045A720 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09111B424E7DE6A004A62AF /* SwiftHTTP.framework */; };
+		B0429C5A24E80F900045A720 /* SwiftHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B09111B424E7DE6A004A62AF /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B077AFB724E5590C0083E2D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFB624E5590C0083E2D4 /* AppDelegate.swift */; };
 		B077AFB924E5590C0083E2D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFB824E5590C0083E2D4 /* SceneDelegate.swift */; };
 		B077AFBC24E5590C0083E2D4 /* SearchDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B077AFBA24E5590C0083E2D4 /* SearchDemo.xcdatamodeld */; };
@@ -21,7 +23,6 @@
 		B077B00024E638EE0083E2D4 /* GoodsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFFF24E638EE0083E2D4 /* GoodsForm.swift */; };
 		B09111A724E7CF8F004A62AF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09111A624E7CF8F004A62AF /* Utils.swift */; };
 		B09111AB24E7D3A1004A62AF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B09111AA24E7D3A1004A62AF /* Podfile */; };
-		B09111C124E7DF7E004A62AF /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09111B424E7DE6A004A62AF /* SwiftHTTP.framework */; };
 		B09111C324E7E55D004A62AF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09111C224E7E55D004A62AF /* Data.swift */; };
 		B09111CB24E7EA3D004A62AF /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09111CA24E7EA3D004A62AF /* MockData.swift */; };
 		B0FB673124E7A8F50074D404 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB673024E7A8F50074D404 /* Server.swift */; };
@@ -85,6 +86,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B0429C5B24E80F900045A720 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B0429C5A24E80F900045A720 /* SwiftHTTP.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B077AFB324E5590C0083E2D4 /* SearchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B077AFB624E5590C0083E2D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B09111C124E7DF7E004A62AF /* SwiftHTTP.framework in Frameworks */,
+				B0429C5924E80F900045A720 /* SwiftHTTP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +375,7 @@
 				B077AFAF24E5590C0083E2D4 /* Sources */,
 				B077AFB024E5590C0083E2D4 /* Frameworks */,
 				B077AFB124E5590C0083E2D4 /* Resources */,
+				B0429C5B24E80F900045A720 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

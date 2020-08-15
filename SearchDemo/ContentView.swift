@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var goodsData: GoodsData
     @State var editing: Bool = false
+    @State var noResult: Bool = false
     @State var keyword: String = ""
     
     let bg: some View = Rectangle()
@@ -19,9 +20,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack (alignment: .center, spacing: 10) {
-                InputBar(editing: $editing, keyword: $keyword)
+                InputBar(editing: $editing, keyword: $keyword, noResult: $noResult)
                 
-                if (goodsData.data.isEmpty) {
+                if (goodsData.data.isEmpty && noResult) {
                     Text("No result")
                         .foregroundColor(.gray)
                         .font(.subheadline)

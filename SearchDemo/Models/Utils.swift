@@ -26,3 +26,8 @@ func serialize<T: Decodable>(_ data: Data) -> T {
         fatalError("Couldn't parse \(data) as \(T.self):\n\(error)")
     }
 }
+
+func spaceTrimmer(str: String) -> String {
+    let whitespace = NSCharacterSet.whitespacesAndNewlines
+    return str.trimmingCharacters(in: whitespace)
+}

@@ -14,6 +14,7 @@ struct InputBar: View {
     
     @Binding var editing: Bool
     @Binding var keyword: String
+    @Binding var noResult: Bool
     
     var body: some View {
         ZStack {
@@ -34,11 +35,12 @@ struct InputBar: View {
                         self.editing = editing
                     }
                 }) {
-                    HTTP.GET("http://localhost:8080/search?kw=" + self.keyword) { response in
-                        if !response.data.isEmpty {
-                            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                                self.goodsData.data = serialize(response.data)
-                            }
+                    HTTP.GET("http://localhost:8080/search?kw=" + spaceTrimmer(str: self.keyword)) { response in
+                        if response.data.isEmpty {
+                            self.noResult = true
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now()) {
+                            self.goodsData.data = response.data.isEmpty ? [] : serialize(response.data)
                         }
                     }
                 }
@@ -49,6 +51,7 @@ struct InputBar: View {
                         .imageScale(.medium)
                         .onTapGesture {
                             self.keyword = ""
+                            self.noResult = false
                             self.goodsData.data = []
                     }
                 }
