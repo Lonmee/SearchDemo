@@ -34,11 +34,6 @@ struct ContentView: View {
             .navigationBarTitle(Text("Search"))
             .padding(.top, editing ? 80 : 6)
         }
-        .onAppear() {
-            if (startServer()) {
-                print("Search_server comes online")
-            }
-        }
         .padding(.top, editing ? -180 : 0)
         .onTapGesture {
             // TODO: keyboard dismiss
