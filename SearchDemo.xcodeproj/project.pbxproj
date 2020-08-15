@@ -192,7 +192,6 @@
 				B077AFCF24E5590D0083E2D4 /* SearchDemoTests */,
 				B077AFDA24E5590D0083E2D4 /* SearchDemoUITests */,
 				B077AFB424E5590C0083E2D4 /* Products */,
-				B09111C024E7DF7E004A62AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -271,13 +270,6 @@
 				B077AFFF24E638EE0083E2D4 /* GoodsForm.swift */,
 			);
 			path = "Supporting Views";
-			sourceTree = "<group>";
-		};
-		B09111C024E7DF7E004A62AF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B0FB672924E7A86C0074D404 /* Server */ = {
