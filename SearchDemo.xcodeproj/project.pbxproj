@@ -19,6 +19,8 @@
 		B077AFEB24E5695F0083E2D4 /* InputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFEA24E5695F0083E2D4 /* InputBar.swift */; };
 		B077AFFB24E5AC890083E2D4 /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFFA24E5AC890083E2D4 /* Goods.swift */; };
 		B077B00024E638EE0083E2D4 /* GoodsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077AFFF24E638EE0083E2D4 /* GoodsForm.swift */; };
+		B09111A724E7CF8F004A62AF /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09111A624E7CF8F004A62AF /* Remote.swift */; };
+		B09111AB24E7D3A1004A62AF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B09111AA24E7D3A1004A62AF /* Podfile */; };
 		B0FB673124E7A8F50074D404 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB673024E7A8F50074D404 /* Server.swift */; };
 		B0FB675224E7A9660074D404 /* GCDWebServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FB673624E7A9660074D404 /* GCDWebServerResponse.m */; };
 		B0FB675324E7A9660074D404 /* GCDWebServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FB673924E7A9660074D404 /* GCDWebServerRequest.m */; };
@@ -71,6 +73,8 @@
 		B077AFEA24E5695F0083E2D4 /* InputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBar.swift; sourceTree = "<group>"; };
 		B077AFFA24E5AC890083E2D4 /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
 		B077AFFF24E638EE0083E2D4 /* GoodsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsForm.swift; sourceTree = "<group>"; };
+		B09111A624E7CF8F004A62AF /* Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
+		B09111AA24E7D3A1004A62AF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		B0FB672A24E7A8980074D404 /* SearchDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		B0FB673024E7A8F50074D404 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		B0FB673424E7A9660074D404 /* GCDWebServerFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerFunctions.h; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		B077AFAA24E5590C0083E2D4 = {
 			isa = PBXGroup;
 			children = (
+				B09111AA24E7D3A1004A62AF /* Podfile */,
 				B077AFB524E5590C0083E2D4 /* SearchDemo */,
 				B077AFCF24E5590D0083E2D4 /* SearchDemoTests */,
 				B077AFDA24E5590D0083E2D4 /* SearchDemoUITests */,
@@ -196,6 +201,7 @@
 		B077AFEE24E5AB930083E2D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B09111A624E7CF8F004A62AF /* Remote.swift */,
 				B077AFFA24E5AC890083E2D4 /* Goods.swift */,
 			);
 			path = Models;
@@ -385,6 +391,7 @@
 			files = (
 				B077AFC624E5590D0083E2D4 /* LaunchScreen.storyboard in Resources */,
 				B077AFC324E5590D0083E2D4 /* Preview Assets.xcassets in Resources */,
+				B09111AB24E7D3A1004A62AF /* Podfile in Resources */,
 				B077AFC024E5590D0083E2D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +428,7 @@
 				B077AFBC24E5590C0083E2D4 /* SearchDemo.xcdatamodeld in Sources */,
 				B0FB675824E7A9660074D404 /* GCDWebServerFileResponse.m in Sources */,
 				B077AFB724E5590C0083E2D4 /* AppDelegate.swift in Sources */,
+				B09111A724E7CF8F004A62AF /* Remote.swift in Sources */,
 				B077AFFB24E5AC890083E2D4 /* Goods.swift in Sources */,
 				B077AFEB24E5695F0083E2D4 /* InputBar.swift in Sources */,
 				B0FB675324E7A9660074D404 /* GCDWebServerRequest.m in Sources */,

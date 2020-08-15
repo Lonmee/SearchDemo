@@ -32,6 +32,8 @@ struct InputBar: View {
                     }
                 }) {
                     print("committed: \(self.keyword)")
+                    //http://localhost:8080/search?kw=Dyson
+                    
                 }
                 
                 if (!keyword.isEmpty) {
