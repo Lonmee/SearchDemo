@@ -33,14 +33,15 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle(Text("Search"))
-            .navigationBarHidden(editing)
-            .padding(.top, editing ? 14 : 0)
+            .padding(.top, editing ? 80 : 6)
         }
         .onAppear() {
             if (startServer()) {
                 print("Search_server comes online")
             }
         }
+        .padding(.top, editing ? -180 : 0)
+        
     }
 }
 

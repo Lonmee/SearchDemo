@@ -31,7 +31,7 @@ struct InputBar: View {
                 }
                 
                 TextField("Tap here to search", text: $keyword, onEditingChanged: { editing in
-                    withAnimation(.easeInOut(duration: 0.1)) {
+                    withAnimation(.easeInOut(duration: 0.6)) {
                         self.editing = editing
                     }
                 }) {
