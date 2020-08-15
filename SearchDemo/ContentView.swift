@@ -13,9 +13,6 @@ struct ContentView: View {
     @State var editing: Bool = false
     @State var keyword: String = ""
     
-    let bg: some View = Rectangle()
-        .fill(Color(red: 0.5, green: 0.5, blue: 0.5))
-    
     var body: some View {
         NavigationView {
             VStack (alignment: .center, spacing: 10) {
