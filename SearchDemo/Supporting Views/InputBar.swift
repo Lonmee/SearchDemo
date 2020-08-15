@@ -31,16 +31,19 @@ struct InputBar: View {
                 }
                 
                 TextField("Tap here to search", text: $keyword, onEditingChanged: { editing in
-                    withAnimation(.easeInOut(duration: 0.6)) {
+                    withAnimation(.easeInOut(duration: 0.4)) {
                         self.editing = editing
                     }
                 }) {
-                    HTTP.GET("http://localhost:8080/search?kw=" + spaceTrimmer(str: self.keyword)) { response in
-                        if response.data.isEmpty {
-                            self.noResult = true
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now()) {
-                            self.goodsData.data = response.data.isEmpty ? [] : serialize(response.data)
+                    let kw = spaceTrimmer(str: self.keyword)
+                    if !kw.isEmpty {
+                        HTTP.GET("http://localhost:8080/search?kw=" + kw) { response in
+                            if response.data.isEmpty {
+                                self.noResult = true
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                                self.goodsData.data = response.data.isEmpty ? [] : serialize(response.data)
+                            }
                         }
                     }
                 }

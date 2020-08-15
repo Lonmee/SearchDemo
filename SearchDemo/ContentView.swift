@@ -22,7 +22,7 @@ struct ContentView: View {
             VStack (alignment: .center, spacing: 10) {
                 InputBar(editing: $editing, keyword: $keyword, noResult: $noResult)
                 
-                if (goodsData.data.isEmpty && noResult) {
+                if (goodsData.data.isEmpty && noResult && !keyword.isEmpty) {
                     Text("No result")
                         .foregroundColor(.gray)
                         .font(.subheadline)
