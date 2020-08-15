@@ -25,9 +25,11 @@ struct Goods : Hashable, Codable, Identifiable {
     }
 }
 
+var goodsData: [Goods] = []
+
 /******************* dev only *******************/
 /// mock data
-let goodsData: [Goods] = [
+let mockGoodsData: [Goods] = [
     Goods(id: 0, brand: "Dyson", category: .vacuum, mode: "V11", stock: true, price: 599.99),
     Goods(id: 1, brand: "Dyson", category: .vacuum, mode: "V10", stock: false, price: 399.99),
     Goods(id: 2, brand: "Dyson", category: .hairDryer, mode: "Supersonic", stock: true, price: 399.99)
@@ -39,7 +41,7 @@ let goodsDataEmpty: [Goods] = []
 /// - Returns: data for server side
 func deserialize() -> String {
     do {
-        let data = try JSONEncoder().encode(goodsData)
+        let data = try JSONEncoder().encode(mockGoodsData)
         return String(data: data, encoding: .utf8)!
     } catch {
         fatalError("Couldn't decode mock data:\n\(error)")

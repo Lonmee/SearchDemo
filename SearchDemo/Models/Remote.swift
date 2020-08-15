@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import SwiftHTTP
 
 func searchReq(kw: String) -> Void {
-//    HTTP.GET("https://google.com") { response in
-//        if let err = response.error {
-//            print("error: \(err.localizedDescription)")
-//            return //also notify app of failure as needed
-//        }
-//        print("opt finished: \(response.description)")
-//    }
+    let url = "http://localhost:8080/search?kw=" + kw
+    HTTP.GET(url) { response in
+        if let err = response.error {
+            print("error: \(err.localizedDescription)")
+            return //also notify app of failure as needed
+        }
+        print("opt finished: \(response.description)")
+    }
 }
