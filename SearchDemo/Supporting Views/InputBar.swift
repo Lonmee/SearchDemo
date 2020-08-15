@@ -16,6 +16,20 @@ struct InputBar: View {
     @Binding var keyword: String
     @Binding var noResult: Bool
     
+    fileprivate func reqSearch() {
+        let kw = spaceTrimmer(str: self.keyword)
+        if !kw.isEmpty {
+            HTTP.GET("http://localhost:8080/search?kw=" + kw) { response in
+                if response.data.isEmpty {
+                    self.noResult = true
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    self.goodsData.data = response.data.isEmpty ? [] : serialize(response.data)
+                }
+            }
+        }
+    }
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10, style: .circular)
@@ -30,22 +44,18 @@ struct InputBar: View {
                         .accessibility(label: Text("Search icon"))
                 }
                 
-                TextField("Tap here to search", text: $keyword, onEditingChanged: { editing in
+                TextField("Tap here to search", text: Binding<String>(
+                get: { self.keyword },
+                set: {
+                    self.keyword = $0
+                    self.reqSearch()
+                }),
+                onEditingChanged: { editing in
                     withAnimation(.easeInOut(duration: 0.4)) {
                         self.editing = editing
                     }
                 }) {
-                    let kw = spaceTrimmer(str: self.keyword)
-                    if !kw.isEmpty {
-                        HTTP.GET("http://localhost:8080/search?kw=" + kw) { response in
-                            if response.data.isEmpty {
-                                self.noResult = true
-                            }
-                            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                                self.goodsData.data = response.data.isEmpty ? [] : serialize(response.data)
-                            }
-                        }
-                    }
+                    self.reqSearch()
                 }
                 
                 if (!keyword.isEmpty) {
