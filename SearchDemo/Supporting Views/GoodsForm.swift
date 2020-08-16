@@ -69,6 +69,7 @@ struct GoodsForm: View {
 
 struct GoodsForm_Previews: PreviewProvider {
     static var previews: some View {
-        GoodsForm(preview: true).environmentObject(GoodsData())
+        GoodsForm(preview: true)
+            .environmentObject(GoodsData())
     }
 }
