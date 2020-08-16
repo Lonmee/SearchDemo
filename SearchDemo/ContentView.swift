@@ -36,6 +36,7 @@ struct ContentView: View {
         .padding(.top, editing ? -180 : 0)
         .onTapGesture {
             // TODO: keyboard dismiss optional
+            print("tapped")
         }
         .onAppear {
             // 监听键盘弹出通知

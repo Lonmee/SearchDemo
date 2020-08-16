@@ -43,6 +43,9 @@ struct InputBar: View {
                         self.editing = editing
                     }
                 })
+                .onAppear {
+                    
+                }
                 // MARK: btn clear
                 if (!keyword.isEmpty) {
                     Image(systemName: "clear")
