@@ -9,20 +9,30 @@
 import SwiftUI
 
 struct GoodsForm: View {
+    let preview: Bool
     @EnvironmentObject var goodsData: GoodsData
     
+    init() {
+        self.preview = false
+    }
+    
+    init(preview: Bool) {
+        self.preview = preview
+    }
+    
+    // MARK: mock data for dev
     var categories: [String: [Goods]] {
-        goodsData.data.isEmpty ? [:] :
-            Dictionary(
-                grouping: goodsData.data,
-                by: { $0.category.rawValue }
+        let data = preview ? mockGoodsData : goodsData.data
+        return data.isEmpty ? [:] : Dictionary(
+            grouping: data,
+            by: { $0.category.rawValue }
         )
     }
     
-    // FIXME: Section with header will increase height
     var body: some View {
         Form {
             ForEach(categories.keys.sorted(by: >), id: \.self) { key in
+                // MARK: Section with default gap between each other
                 Section (header: Text(key)
                     .font(.subheadline)
                     .fontWeight(.medium)) {
@@ -59,6 +69,6 @@ struct GoodsForm: View {
 
 struct GoodsForm_Previews: PreviewProvider {
     static var previews: some View {
-        GoodsForm()
+        GoodsForm(preview: true).environmentObject(GoodsData())
     }
 }
