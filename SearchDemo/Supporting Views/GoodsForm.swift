@@ -28,6 +28,7 @@ struct GoodsForm: View {
                     .fontWeight(.medium)) {
                             ForEach(self.categories[key]!, id: \.self) {goods in
                                 HStack {
+                                    // MARK: mode & stock
                                     VStack(alignment: .leading, spacing: 4) {
                                         Text(goods.mode)
                                             .font(.headline)
@@ -37,13 +38,16 @@ struct GoodsForm: View {
                                     }
                                     .frame(height: 44, alignment: .center)
                                     Spacer()
+                                    // MARK: prick
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 10, style: .circular)
-                                            .fill(goods.stock ? Color.blue : Color.gray)
-                                            .opacity(0.1)
+                                            .fill(goods.stock ?
+                                                Color.init(red: 245 / 255, green: 247 / 255, blue: 254 / 255) :
+                                                Color.init(red: 246 / 255, green: 246 / 255, blue: 246 / 255))
                                             .frame(width:70, height: 24)
                                         Text("$\(String(goods.price))")
                                             .foregroundColor(goods.stock ? .blue : .gray)
+                                            .opacity(0.9)
                                             .font(.caption)
                                     }
                                 }

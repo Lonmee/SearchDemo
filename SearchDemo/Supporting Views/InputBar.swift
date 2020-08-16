@@ -18,7 +18,7 @@ struct InputBar: View {
         ZStack {
             // MARK: bg
             RoundedRectangle(cornerRadius: 10, style: .circular)
-                .fill(Color.init(red: 244 / 255, green: 244 / 255, blue: 244 / 255))
+                .fill(Color.init(red: 237 / 255, green: 237 / 255, blue: 238 / 255))
                 .frame(height: 38)
             
             // MARK: input area
