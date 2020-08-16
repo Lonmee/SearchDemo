@@ -15,13 +15,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack (alignment: .center, spacing: 0) {
-                ZStack {
-                    Rectangle()
-                        .fill(Color.init(.sRGB, red: 242 / 255, green: 242 / 255, blue: 247 / 255))
-                        .frame(height: 58)
-                    InputBar(editing: $editing, keyword: $keyword)
-                }
+            VStack (alignment: .center, spacing: 10) {
+                InputBar(editing: $editing, keyword: $keyword)
                 
                 if (goodsData.data.isEmpty && !keyword.isEmpty) {
                     ZStack{
@@ -47,6 +42,11 @@ struct ContentView: View {
         .onTapGesture {
             // TODO: keyboard dismiss optional
         }
+        // MARK: swfitUI 2.0 only
+        //        .background(NavigationConfigurator { nc in
+        //            nc.navigationBar.barTintColor = .blue
+        //            nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        //        })
     }
 }
 
