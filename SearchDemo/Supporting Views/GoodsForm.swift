@@ -41,9 +41,8 @@ struct GoodsForm: View {
                                     // MARK: prick
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 10, style: .circular)
-                                            .fill(goods.stock ?
-                                                Color.init(red: 245 / 255, green: 247 / 255, blue: 254 / 255) :
-                                                Color.init(red: 246 / 255, green: 246 / 255, blue: 246 / 255))
+                                            .fill(goods.stock ? Color.blue : Color.gray)
+                                            .opacity(0.1)
                                             .frame(width:70, height: 24)
                                         Text("$\(String(goods.price))")
                                             .foregroundColor(goods.stock ? .blue : .gray)
