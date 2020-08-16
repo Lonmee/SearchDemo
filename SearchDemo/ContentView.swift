@@ -15,34 +15,21 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            ZStack (alignment: .top){
-                // the holder
-                Form {
-                    EmptyView()
+            VStack (alignment: .center, spacing: 10) {
+                InputBar(editing: $editing, keyword: $keyword)
+                
+                if (goodsData.data.isEmpty && !keyword.isEmpty) {
+                    Text("No result")
+                        .foregroundColor(.gray)
+                        .font(.subheadline)
+                        .padding(.top, 60)
+                    Spacer()
+                } else {
+                    GoodsForm()
                 }
-                VStack (alignment: .center, spacing: 10) {
-                    InputBar(editing: $editing, keyword: $keyword)
-                    
-                    if (goodsData.data.isEmpty && !keyword.isEmpty) {
-                        ZStack{
-                            Rectangle()
-                                .fill(Color.init(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
-                            VStack {
-                                Text("No result")
-                                    .foregroundColor(.gray)
-                                    .font(.subheadline)
-                                    .padding(.top, 60)
-                                GoodsForm()
-                                Spacer()
-                            }
-                        }
-                    } else {
-                        GoodsForm()
-                    }
-                }
-                .navigationBarTitle(Text("Search"))
-                .padding(.top, editing ? 80 : 6)
             }
+            .navigationBarTitle(Text("Search"))
+            .padding(.top, editing ? 80 : 6)
         }
         .padding(.top, editing ? -180 : 0)
         .onTapGesture {
