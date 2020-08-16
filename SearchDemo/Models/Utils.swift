@@ -31,3 +31,19 @@ func spaceTrimmer(str: String) -> String {
     let whitespace = NSCharacterSet.whitespacesAndNewlines
     return str.trimmingCharacters(in: whitespace)
 }
+
+class NotificationUitls: NSObject {
+    // all notification
+    @objc func notificationForAll(notification: Notification) {
+        print(notification.name.rawValue)
+    }
+    // 键盘显示
+    @objc func keyboardWillShow(notification: Notification) {
+        print("键盘将要出现")
+    }
+    // 键盘隐藏
+    @objc func keyboardWillHide(notification: Notification) {
+        print("键盘将要隐藏")
+    }
+}
+

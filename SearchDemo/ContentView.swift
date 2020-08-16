@@ -13,6 +13,8 @@ struct ContentView: View {
     @State var editing: Bool = false
     @State var keyword: String = ""
     
+    let keyboardUitls = NotificationUitls()
+    
     var body: some View {
         NavigationView {
             VStack (alignment: .center, spacing: 10) {
@@ -34,6 +36,26 @@ struct ContentView: View {
         .padding(.top, editing ? -180 : 0)
         .onTapGesture {
             // TODO: keyboard dismiss optional
+        }
+        .onAppear {
+            // 监听键盘弹出通知
+            NotificationCenter.default.addObserver(self.keyboardUitls,
+                                                   selector: #selector(NotificationUitls.notificationForAll(notification:)),
+                                                   name: nil,
+                                                   object: nil)
+            // 监听键盘弹出通知
+            NotificationCenter.default.addObserver(self.keyboardUitls,
+                                                   selector: #selector(NotificationUitls.keyboardWillShow(notification:)),
+                                                   name:UIResponder.keyboardWillShowNotification,
+                                                   object: nil)
+            // 监听键盘隐藏通知
+            NotificationCenter.default.addObserver(self.keyboardUitls,
+                                                   selector: #selector(NotificationUitls.keyboardWillHide(notification:)),
+                                                   name: UIResponder.keyboardWillHideNotification,
+                                                   object: nil)
+        }
+        .onDisappear {
+            NotificationCenter.default.removeObserver(self)
         }
     }
 }
