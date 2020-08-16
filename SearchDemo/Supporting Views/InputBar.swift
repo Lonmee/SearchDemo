@@ -18,9 +18,9 @@ struct InputBar: View {
         ZStack {
             // MARK: bg
             RoundedRectangle(cornerRadius: 10, style: .circular)
-                .fill(Color.init(red: 237 / 255, green: 237 / 255, blue: 238 / 255))
+                .fill(Color.gray)
+                .opacity(0.1)
                 .frame(height: 38)
-            
             // MARK: input area
             HStack {
                 // MARK: btn magnifying
