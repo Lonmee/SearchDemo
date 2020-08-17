@@ -13,8 +13,6 @@ struct ContentView: View {
     @State var editing: Bool = false
     @State var keyword: String = ""
     
-    let keyboardUitls = NotificationUitls()
-    
     var body: some View {
         NavigationView {
             VStack (alignment: .center, spacing: 10) {
@@ -40,8 +38,8 @@ struct ContentView: View {
         }
         .onAppear {
             NotificationCenter.default.addObserver(
-                self.keyboardUitls,
-                selector: #selector(NotificationUitls.notificationForAll(notification:)),
+                NotificationListener.sharedInstance,
+                selector: #selector(NotificationListener.notificationForAll(notification:)),
                 name: nil,
                 object: nil)
         }

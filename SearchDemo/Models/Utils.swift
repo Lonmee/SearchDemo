@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftHTTP
+import UIKit
 
 func deserialize<T: Codable> (_ data: T) -> String {
     do {
@@ -32,10 +33,14 @@ func spaceTrimmer(str: String) -> String {
     return str.trimmingCharacters(in: whitespace)
 }
 
-class NotificationUitls: NSObject {
-    // all notification
+class NotificationListener: NSObject {
+    static let sharedInstance = NotificationListener()
     @objc func notificationForAll(notification: Notification) {
-        print(notification.name.rawValue)
+        switch notification.name {
+        case UIResponder.keyboardWillShowNotification: break
+        case UIResponder.keyboardWillHideNotification: break
+        default: break
+        }
     }
 }
 
