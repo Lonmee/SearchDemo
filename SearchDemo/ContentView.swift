@@ -39,21 +39,11 @@ struct ContentView: View {
             print("tapped")
         }
         .onAppear {
-            // 监听键盘弹出通知
-            NotificationCenter.default.addObserver(self.keyboardUitls,
-                                                   selector: #selector(NotificationUitls.notificationForAll(notification:)),
-                                                   name: nil,
-                                                   object: nil)
-            // 监听键盘弹出通知
-            NotificationCenter.default.addObserver(self.keyboardUitls,
-                                                   selector: #selector(NotificationUitls.keyboardWillShow(notification:)),
-                                                   name:UIResponder.keyboardWillShowNotification,
-                                                   object: nil)
-            // 监听键盘隐藏通知
-            NotificationCenter.default.addObserver(self.keyboardUitls,
-                                                   selector: #selector(NotificationUitls.keyboardWillHide(notification:)),
-                                                   name: UIResponder.keyboardWillHideNotification,
-                                                   object: nil)
+            NotificationCenter.default.addObserver(
+                self.keyboardUitls,
+                selector: #selector(NotificationUitls.notificationForAll(notification:)),
+                name: nil,
+                object: nil)
         }
         .onDisappear {
             NotificationCenter.default.removeObserver(self)
