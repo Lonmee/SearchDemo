@@ -36,7 +36,7 @@ struct GoodsForm: View {
                 Section (header: Text(key)
                     .font(.subheadline)
                     .fontWeight(.medium)) {
-                        ForEach(self.categories[key]!, id: \.self) {goods in
+                        ForEach(self.categories[key]!, id: \.self) { goods in
                             HStack {
                                 // MARK: mode & stock
                                 VStack(alignment: .leading, spacing: 4) {
