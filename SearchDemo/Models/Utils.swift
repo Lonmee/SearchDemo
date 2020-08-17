@@ -15,7 +15,7 @@ func deserialize<T: Codable> (_ data: T) -> String {
         let data = try JSONEncoder().encode(data)
         return String(data: data, encoding: .utf8)!
     } catch {
-        fatalError("Couldn't code \(data) as \(T.self):\n\(error)")
+        fatalError("Couldn't encode \(data) as \(T.self):\n\(error)")
     }
 }
 
