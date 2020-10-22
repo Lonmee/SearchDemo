@@ -36,6 +36,7 @@ func spaceTrimmer(str: String) -> String {
 class NotificationListener: NSObject {
     static let sharedInstance = NotificationListener()
     @objc func notificationForAll(notification: Notification) {
+        print(notification.name)
         switch notification.name {
         case UIResponder.keyboardWillShowNotification: break
         case UIResponder.keyboardWillHideNotification: break
